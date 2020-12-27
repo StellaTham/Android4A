@@ -6,7 +6,7 @@ import com.example.android4a.domain.entity.User
 class CreateUserUseCase(
     private val userRepository: UserRepository
 ) {
-    suspend fun invoke(user: User){
-        userRepository.createUser(user)
+    suspend fun invoke(user: User): String{
+        return userRepository.createUser(user)
     }
 }

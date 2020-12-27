@@ -1,5 +1,6 @@
 package com.example.android4a.presentation.main
 
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,18 +19,34 @@ class MainViewModel (
 
 
     val loginLiveData: MutableLiveData<LoginStatus> = MutableLiveData()
+    val createLiveData: MutableLiveData<CreateStatus> = MutableLiveData()
 
-    fun onClickedLogin(emailUser: String, password: String) {
+    fun onClickedLogin(emailUser: String, passwordUser: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val user = getUserUseCase.invoke(emailUser)
+            val user = getUserUseCase.invoke(emailUser, passwordUser)
             val loginStatus = if(user!=null){
-                LoginSuccess(user.email)
+                LoginSuccess(user.email, user.password)
             }else{
                 LoginError
             }
 
             withContext(Dispatchers.Main){
                 loginLiveData.value=loginStatus}
+        }
+    }
+
+    fun onClickedCreate(emailUser: String, passwordUser: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            val result = createUserUseCase.invoke(User(emailUser, passwordUser))
+            val createStatus = if(result.equals("Success")){
+                CreateSuccess(emailUser, passwordUser)
+            }else{
+                CreateError
+            }
+
+            withContext(Dispatchers.Main){
+                createLiveData.value=createStatus}
         }
     }
 }
