@@ -1,10 +1,12 @@
 package com.example.android4a.presentation.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.android4a.R
+import com.example.android4a.presentation.list.ListActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
@@ -21,7 +23,9 @@ class MainActivity : AppCompatActivity() {
             when (it) {
                 is LoginSuccess -> {
                     Toast.makeText(this, "Account found", Toast.LENGTH_SHORT).show()
-                }//TODO Navigation
+                    val intent = Intent(this, ListActivity::class.java)
+                    startActivity(intent)
+                }
                 LoginError -> {
                     MaterialAlertDialogBuilder(this).setTitle("Account Error").setMessage("Unknown account!").setPositiveButton("Ok"){ dialog,
                     which-> dialog.dismiss()}.show()

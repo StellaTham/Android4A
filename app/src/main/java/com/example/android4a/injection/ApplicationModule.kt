@@ -8,11 +8,13 @@ import com.example.android4a.data.repository.UserRepository
 import com.example.android4a.domain.usecase.CreateUserUseCase
 import com.example.android4a.domain.usecase.GetUserUseCase
 import com.example.android4a.presentation.main.MainViewModel
+import com.example.android4a.presentation.list.ListViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val presentationModule = module {
     factory{ MainViewModel(get(), get()) }
+    factory{ ListViewModel() }
 
 }
 
