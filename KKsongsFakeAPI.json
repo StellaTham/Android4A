@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "Agent K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/1",
+      "music": "https://acnhapi.com/v1/music/1"
+    },
+    {
+      "id": 2,
+      "name": "Aloha K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/2",
+      "music": "https://acnhapi.com/v1/music/2"
+    },
+    {
+      "id": 3,
+      "name": "Animal City",
+      "image": "https://acnhapi.com/v1/images/songs/3",
+      "music": "https://acnhapi.com/v1/music/3"
+    },
+    {
+      "id": 4,
+      "name": "Bubblegum K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/4",
+      "music": "https://acnhapi.com/v1/music/4"
+    },
+    {
+      "id": 5,
+      "name": "Café K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/5",
+      "music": "https://acnhapi.com/v1/music/5"
+    },
+    {
+      "id": 6,
+      "name": "Comrade K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/6",
+      "music": "https://acnhapi.com/v1/music/6"
+    },
+    {
+      "id": 7,
+      "name": "DJ K.K.",
+      "image": "https://acnhapi.com/v1/images/songs/7",
+      "music": "https://acnhapi.com/v1/music/7"
+    },
+    {
+      "id": 8,
+      "name": "Drivin'",
+      "image": "https://acnhapi.com/v1/images/songs/8",
+      "music": "https://acnhapi.com/v1/music/8"
+    },
+    {
+      "id": 9,
+      "name": "Farewell",
+      "image": "https://acnhapi.com/v1/images/songs/9",
+      "music": "https://acnhapi.com/v1/music/9"
+    },
+    {
+      "id": 10,
+      "name": "Forest Life",
+      "image": "https://acnhapi.com/v1/images/songs/10",
+      "music": "https://acnhapi.com/v1/music/10"
+    }
+  ]
+}
