@@ -25,7 +25,7 @@ val domainModule = module{
 
 val dataModule = module{
     single{UserRepository(get())}
-    single<DatabaseDao>{createDataBase(androidContext())
+    single {createDataBase(androidContext())
     }
 }
 

@@ -26,7 +26,7 @@ class KKSongsRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
             is KKSongViewHolder -> {
-                holder.bind(items.get(position))
+                holder.bind(items[position])
             }
         }
     }
@@ -40,10 +40,14 @@ class KKSongsRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
         val kksong_image = itemView.kksong_image
 
         fun bind(kkSong: KKSong){
-            kksong_name.setText(kkSong.name)
+            kksong_name.text = kkSong.name
+
+            //Basic Request Options to handle Glide
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
+
+            //Using Glide to display images from URL
             Glide.with(itemView.context)
                 .applyDefaultRequestOptions(requestOptions)
                 .load(kkSong.image)
