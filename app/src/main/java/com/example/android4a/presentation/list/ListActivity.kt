@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android4a.R
 import com.example.android4a.data.local.DataSource
+import com.example.android4a.domain.entity.KKSong
 import com.example.android4a.presentation.list.ListViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_list.*
 import org.koin.android.ext.android.inject
 
@@ -15,12 +17,26 @@ class ListActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
-        initRecyclerView()
-        addDataSet()
+        listViewModel.makeApiCall()
+        listViewModel.apiCallLiveData.observe(this, {
+            when(it){
+                is APICallSuccess -> {
+                    initRecyclerView()
+                    addDataSet(it.kkSongList)
+                }
+                APICallError -> {
+                    MaterialAlertDialogBuilder(this).setTitle("API Call Error").setMessage("Couldn't make API Call").setPositiveButton("Ok"){ dialog,
+                                                                                                                                       which-> dialog.dismiss()}.show()
+                }
+            }
+        })
+
+
     }
 
-    private fun addDataSet(){
-        val data = DataSource.createDataSet()
+    private fun addDataSet(kkSongList: List<KKSong>){
+        //val data = DataSource.createDataSet()
+        val data = kkSongList
         kksongAdapter.submitList(data)
     }
 
