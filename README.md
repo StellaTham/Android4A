@@ -11,7 +11,7 @@ Il contient une page de connexion/inscription qui donne accès à une liste de m
 ##  **Eléments implémentés**
 * Ecran de connexion/inscription de compte
 * Ecran avec une liste de musiques de Kéké
-* Appel WebService à une API rest  
+* Appel WebService à une API rest
 * Stockage de données dans une base de données avec Room
 * Clean Architecture et MVVM
 * Design
@@ -42,3 +42,4 @@ Si l'on réussit finalement à se connecter avec un compte qui est bien enregist
 ![List2](https://user-images.githubusercontent.com/49620631/103322123-35bd7000-4a3d-11eb-9202-f62e9b260d39.JPG)
 
 P.-S. : le paramètre "music" dans KKsong devait être utilisé pour lire de la musique depuis le fichier mp3 auquel on accède avec le lien URL mais l'idée a été abandonnée par manque de temps.
+FakeAPI basé sur http://acnhapi.com/v1/songs
