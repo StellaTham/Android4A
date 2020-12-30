@@ -1,14 +1,14 @@
 # Android4A
 Projet Mobile Programming 4A
 
-##  **Presentation**   
+##  **Présentation**   
 
 Ce projet est une application développée sur Android Studio en utilisant le langage Kotlin.
 
 Il contient une page de connexion/inscription qui donne accès à une liste de musiques de Kéké dans Animal Crossing.
 
 
-##  **Elements implémentés**
+##  **Eléments implémentés**
 * Ecran de connexion/inscription de compte
 * Ecran avec une liste de musiques de Kéké
 * Appel WebService à une API rest  
